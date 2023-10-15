@@ -317,23 +317,23 @@ figure img:hover,
 }
 
 .popular_post_img1 {
-    background-image: url(' ../images/bg.png');
-    background-size: var(--bg-size);
+    background-image: url('https://cdn.britannica.com/47/188747-050-1D34E743/Bill-Gates-2011.jpg');
+    background-size: contain;
 }
 
 .popular_post_img2 {
-    background-image: url(' ../images/mz.png');
-    background-size: var(--bg-size);
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Mark_Zuckerberg_F8_2019_Keynote_%2832830578717%29_%28cropped%29.jpg/640px-Mark_Zuckerberg_F8_2019_Keynote_%2832830578717%29_%28cropped%29.jpg');
+    background-size: contain;
 }
 
 .popular_post_img3 {
-    background-image: url(' ../images/zb.png');
-    background-size: var(--bg-size);
+    background-image: url('https://imageio.forbes.com/specials-images/imageserve/5bb22ae84bbe6f67d2e82e05/0x0.jpg?format=jpg&crop=1012,1013,x627,y129,safe&height=416&width=416&fit=bounds');
+    background-size: contain;
 }
 
 .popular_post_img4 {
-    background-image: url(' ../images/sj.png');
-    background-size: var(--bg-size);
+    background-image: url('https://hips.hearstapps.com/hmg-prod/images/apple-ceo-steve-jobs-speaks-during-an-apple-special-event-news-photo-1683661736.jpg?crop=0.800xw:0.563xh;0.0657xw,0.0147xh&resize=1200:*');
+    background-size: contain;
 }
 
 .right_sub__div {
