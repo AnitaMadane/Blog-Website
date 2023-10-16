@@ -65,7 +65,7 @@
                                 </p>
                                 <div class="d-flex justify-content-between left_div_btns">
                                     <div>
-                                        <button class="left_div__like" id="like_btn">
+                                        <button class="left_div__like like_btn">
                                             <i class="fa-solid fa-thumbs-up"></i> Like
                                         </button>
                                     </div>
@@ -108,7 +108,7 @@
                                 </p>
                                 <div class="d-flex justify-content-between left_div_btns">
                                     <div>
-                                        <button class="left_div__like" id="like_btn">
+                                        <button class="left_div__like like_btn">
                                             <i class="fa-solid fa-thumbs-up"></i> Like
                                         </button>
                                     </div>
@@ -162,7 +162,7 @@
                                 </p>
                                 <div class="d-flex justify-content-between left_div_btns">
                                     <div>
-                                        <button class="left_div__like" id="like_btn">
+                                        <button class="left_div__like like_btn">
                                             <i class="fa-solid fa-thumbs-up"></i> Like
                                         </button>
                                     </div>
@@ -222,7 +222,7 @@
                                         </div>
                                         <div class="col-9">
                                             <h3>Mark Zuckerberg</h3>
-                                            <p class="text-capitalize">Programmer</p>
+                                            <p class="text-capitalize">Meta</p>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -309,7 +309,7 @@
                                 <div class="right_div__title py-4 pl-2">
                                     <h2>Follow Me</h2>
                                 </div>
-                                    <div class="right_sub_div d-flex justify-content-around">
+                                    <div class="right_sub_div d-flex justify-content-around mt-4">
                                         <a href="#"><i class="fab fa-facebook-square fa-3x"></i></a>
                                         <a href="#"><i class="fab fa-instagram-square fa-3x"></i></a>
                                         <a href="#"><i class="fab fa-github-square fa-3x"></i></a>
@@ -371,39 +371,84 @@
         // like button js 
 
         // to get the id of like btn
+
+        // OLD CODE ---------------------
         
-        const like = document.getElementById('like_btn');
+        // const like = document.getElementById('like_btn');
         
-        const singleClick = () => {
-            like.style.fontWeight = 'bold';
-            like.style.background ='#bbe1fa';
-            like.style.color ='#1b262c';
-            like.innerHTML = " Liked";
-        }
-        const doubleClick = () => {
-            like.style.fontWeight = 'normal';
-            like.style.background = '#3282b8';
-            like.style.color = '#fff';
-            like.innerHTML = "Like";
-        }
+        // const singleClick = () => {
+        //     console.log('single click');
+        //     like.style.fontWeight = 'bold';
+        //     like.style.background ='#bbe1fa';
+        //     like.style.color ='#1b262c';
+        //     like.innerHTML = " Liked";
+        // }
+        // const doubleClick = () => {
+        //     console.log('double click');
+        //     like.style.fontWeight = 'normal';
+        //     like.style.background = '#3282b8';
+        //     like.style.color = '#fff';
+        //     like.innerHTML = "Like";
+        // }
 
         // 2nd step to call the func on click and then doubleClick
 
-        var clickCount = 0;
+        // var clickCount = 0;
 
-        like.addEventListener('click', function() {
-            clickCount++;
-            if (clickCount === 1) {
-                singleClickTimer = setTimeout(function() {
-                    clickCount = 0;
-                    singleClick();
-                }, 400);
-            } else if (clickCount === 2) {
-                clearTimeout(singleClickTimer);
-                clickCount = 0;
-                doubleClick();
+        // like.addEventListener('click', function() {
+        //     clickCount++;
+        //     if (clickCount === 1) {
+        //         singleClickTimer = setTimeout(function() {
+        //             clickCount = 0;
+        //             singleClick();
+        //         }, 400);
+        //     } else if (clickCount === 2) {
+        //         clearTimeout(singleClickTimer);
+        //         clickCount = 0;
+        //         doubleClick();
+        //     }
+        // }, false);
+
+        // NEW CODE ---------------------------
+
+
+        const likeButtons = document.querySelectorAll('.like_btn');
+
+            likeButtons.forEach(like => {
+                let clickCount = 0;
+                let singleClickTimer;
+
+                like.addEventListener('click', function () {
+                    clickCount++;
+                    if (clickCount === 1) {
+                        singleClickTimer = setTimeout(function () {
+                            clickCount = 0;
+                            singleClick(like);
+                        }, 400);
+                    } else if (clickCount === 2) {
+                        clearTimeout(singleClickTimer);
+                        clickCount = 0;
+                        doubleClick(like);
+                    }
+                }, false);
+            });
+
+            function singleClick(like) {
+                console.log('single click');
+                like.style.fontWeight = 'bold';
+                like.style.background = '#bbe1fa';
+                like.style.color = '#1b262c';
+                like.innerHTML = 'Liked';
             }
-        }, false);
+
+            function doubleClick(like) {
+                console.log('double click');
+                like.style.fontWeight = 'normal';
+                like.style.background = '#3282b8';
+                like.style.color = '#fff';
+                like.innerHTML = 'Like';
+            }
+
     </script>
   </body>
 </html>
